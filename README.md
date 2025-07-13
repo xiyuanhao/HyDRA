@@ -61,7 +61,7 @@ Assume your project root is `/path/to/project/hydra`, organize your folders as:
 cd /path/to/project/hydra
 mkdir -p data/pretrain_data data/finetune_data data/benchmark_data
 
-###📦 Pretrain Data (for Stage I)
+#📦 Pretrain Data (for Stage I)
 
 cd data/pretrain_data
 # Download LLaVA-558K dataset (provided by LLaVA team)
@@ -69,7 +69,7 @@ cd ${work_dir}/data/pretrain_data
 Download the LLaVA-558K from here, which is provided by LLaVA team.
 here(https://huggingface.co/datasets/liuhaotian/LLaVA-Instruct-150K/blob/main/llava_v1_5_mix665k.json)
 
-###📚 Instruction Tuning Data (for Stage II)
+#📚 Instruction Tuning Data (for Stage II)
 
 # Download the instruction tuning annotations
 
