@@ -76,23 +76,4 @@ Download the [LLaVA-Instruct-150K JSON file](https://huggingface.co/datasets/liu
 Collect images from COCO, GQA, OCR-VQA, TextVQA, VisualGnome (Part1 & Part2)
 
 📚Data Download Instructions
-download some useful data/scripts pre-collected.
-unzip benchmark_data.zip && cd benchmark_data
-bmk_dir=${work_dir}/data/benchmark_data
-gqa
-download its image data following the official instructions here
-cd ${bmk_dir}/gqa && ln -s /path/to/gqa/images images
-mme
-download the data following the official instructions here.
-cd ${bmk_dir}/mme && ln -s /path/to/MME/MME_Benchmark_release_version images
-pope
-download coco from POPE following the official instructions here.
-cd ${bmk_dir}/pope && ln -s /path/to/pope/coco coco && ln -s /path/to/coco/val2014 val2014
-sqa
-download images from the data/scienceqa folder of the ScienceQA repo.
-cd ${bmk_dir}/sqa && ln -s /path/to/sqa/images images
-textvqa
-download images following the instructions here.
-cd ${bmk_dir}/textvqa && ln -s /path/to/textvqa/train_images train_images
-mmbench
-no action is needed.
+
