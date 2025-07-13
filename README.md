@@ -38,7 +38,7 @@ The training process of **HyDRA** also follows a **two-stage** design built on t
 
 - This stage initializes coarse and fine-grained rank structures for different transformer layers.
 - A lightweight performance model automatically adjusts LoRA ranks during fine-tuning.
-- Training time: ~this training process takes around 2~3.5 hours for model on 8x A100 (80G) with a batch size of 128 and an average of approximately 46G/52G of GPU memory required.
+- Training time: this training process takes around 2~3.5 hours for model on 8x A100 (80G) with a batch size of 128 and an average of approximately 46G/52G of GPU memory required.
 
 
 > 📝 **Note**: To train with fewer GPUs or lower memory, reduce `per_device_train_batch_size` and increase `gradient_accumulation_steps` accordingly to keep the **global batch size** constant:  
