@@ -25,11 +25,10 @@ We present **HyDRA**, a novel **Hybrid Decomposed Rank Adaptation** framework de
 
 The training process of **HyDRA** also follows a **two-stage** design built on top of [MobileVLM](https://github.com/Meituan-AutoML/MobileVLM):
 
-### 🧩 Stage I: Hybrid Rank Initialization Pretrain
+### 🧩 Stage I: Initialization Pretrain
 
 ❄️ frozen vision encoder + 🔥 learnable LDP projector + ❄️ frozen LLM
 
-- This stage initializes coarse and fine-grained rank structures for different transformer layers.
 - Training time: ~1–1.5 hours for HyDRA-1.7B on 8× A100 (80G)  
 - GPU memory: ~17G per GPU with batch size 256
 
@@ -37,6 +36,7 @@ The training process of **HyDRA** also follows a **two-stage** design built on t
 
 ❄️ frozen vision encoder + 🔥 learnable LDP projector + 🔥 learnable LLM + 🔥 hybrid-rank LoRA adapter + 🔁 dynamic-rank scheduler
 
+- This stage initializes coarse and fine-grained rank structures for different transformer layers.
 - A lightweight performance model automatically adjusts LoRA ranks during fine-tuning.
 - Training time: ~2–3 hours for HyDRA-1.7B on 8× A100 (80G)  
 - GPU memory: ~48G per GPU with batch size 128
