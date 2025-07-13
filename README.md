@@ -44,3 +44,33 @@ The training process of **HyDRA** also follows a **two-stage** design built on t
 > 📝 **Note**: To train with fewer GPUs or lower memory, reduce `per_device_train_batch_size` and increase `gradient_accumulation_steps` accordingly to keep the **global batch size** constant:  
 > `per_device_train_batch_size × gradient_accumulation_steps × num_gpus`
 
+## 1️⃣ Prepare Base Checkpoints
+
+Download **MobileLLaMA** base models (1.7B / 2.7B) from Hugging Face:  
+- [MobileLLaMA-1.7B](https://huggingface.co/mtgv/MobileLLaMA-1.4B-Chat)  
+- [MobileLLaMA-2.7B](https://huggingface.co/mtgv/MobileLLaMA-2.7B-Chat)
+
+Alternatively, you can skip this step — the model will be automatically downloaded by 🤗 `transformers` during training.
+
+---
+
+## 2️⃣ Prepare Data
+
+Assume your project root is `/path/to/project/hydra`, organize your folders as:
+
+```bash
+cd /path/to/project/hydra
+mkdir -p data/pretrain_data data/finetune_data data/benchmark_data
+
+###📦 Pretrain Data (for Stage I)
+
+cd data/pretrain_data
+# Download LLaVA-558K dataset (provided by LLaVA team)
+wget https://your-data-link.com/llava_558k.json
+
+###📚 Instruction Tuning Data (for Stage II)
+
+cd data/finetune_data
+# Download the instruction tuning annotations
+ here(https://huggingface.co/datasets/liuhaotian/LLaVA-Instruct-150K/blob/main/llava_v1_5_mix665k.json)
+# Collect images from COCO, GQA, OCR-VQA, TextVQA, VisualGnome (Part1 & Part2)
