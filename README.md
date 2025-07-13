@@ -58,7 +58,6 @@ Alternatively, you can skip this step — the model will be automatically downlo
 
 Assume your project root is `/path/to/project/hydra`, organize your folders as:
 
-```bash
 cd /path/to/project/hydra
 mkdir -p data/pretrain_data data/finetune_data data/benchmark_data
 
@@ -66,11 +65,12 @@ mkdir -p data/pretrain_data data/finetune_data data/benchmark_data
 
 cd data/pretrain_data
 # Download LLaVA-558K dataset (provided by LLaVA team)
-wget https://your-data-link.com/llava_558k.json
+cd ${work_dir}/data/pretrain_data
+Download the LLaVA-558K from here, which is provided by LLaVA team.
+here(https://huggingface.co/datasets/liuhaotian/LLaVA-Instruct-150K/blob/main/llava_v1_5_mix665k.json)
 
 ###📚 Instruction Tuning Data (for Stage II)
 
-cd data/finetune_data
 # Download the instruction tuning annotations
- here(https://huggingface.co/datasets/liuhaotian/LLaVA-Instruct-150K/blob/main/llava_v1_5_mix665k.json)
+
 # Collect images from COCO, GQA, OCR-VQA, TextVQA, VisualGnome (Part1 & Part2)
